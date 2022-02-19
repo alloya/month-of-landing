@@ -98,5 +98,5 @@ $breakpoint-med: 1175px;
 }
 
 @mixin cursor-pointer {
-  cursor: url(../img/cursor.svg) 2 2, pointer;
+  cursor: url(../img/cursor.svg), auto;
 }

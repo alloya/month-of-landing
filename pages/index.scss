@@ -13,10 +13,10 @@
   box-sizing: border-box;
 }
 
-.content {
-  display: grid;
-  row-gap: 120px;
-}
+// .content {
+//   display: grid;
+//   row-gap: 120px;
+// }
 
 .header {
   padding: 28px 120px 28px 0;
@@ -42,35 +42,33 @@
   }
 }
 
-
 .nav-link {
   text-decoration: none;
   color: $font-dark;
-  cursor: url(../img/cursor.svg), auto;
+  @include cursor-pointer;
 }
 
 .section__title {
   @include font-size(55, 60, 700);
   letter-spacing: -0.5px;
-  margin-top: 60px;
   margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .intro {
   display: flex;
   justify-content: space-between;
-  padding-top: 20px;
 }
 
 .intro__wrapper {
   display: flex;
 }
 
-.intro__info {
+.section__info {
   width: 460px;
 }
 
-.intro__description {
+.section__description {
   @include font-size(18, 28);
   margin-bottom: 50px;
 }
@@ -97,6 +95,7 @@
 .intro__button {
   @include background-transition($secondary, #319E75);
   @include font-size(18, 18);
+  @include cursor-pointer;
   padding: 16px 10px;
   width: 180px;
   text-align: center;
@@ -108,6 +107,7 @@
 
 .intro__images-block {
   position: relative;
+  padding-top: 20px;
 }
 
 .intro__sticky-bike {
@@ -124,7 +124,7 @@
   padding: 20px 50px;
   border-radius: 20px;
   position: sticky;
-  top: 0;
+  top: 80px;
   box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
 }
 
@@ -162,4 +162,77 @@
   margin: 0;
   color: #222222;
   opacity: 0.7;
+}
+
+.hidden {
+  display: none;
+}
+
+.carousel {
+  padding-top: 120px;
+}
+
+.carousel__imgs {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  position: relative;
+  width: 1320px;
+  overflow: hidden;
+}
+
+.carousel__item-image {
+  height: 400px;
+  width: 650px;
+  object-fit: cover;
+  margin-right: auto;
+}
+
+.carousel__terrain {
+  position: absolute;
+  bottom: 16px;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  user-select: none;
+  @include cursor-pointer;
+  transition: opacity 0.6s ease;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.arrow_prev {
+  background-image: url(../img/arrow-left.svg);
+  margin-right: 20px;
+}
+
+.arrow_next {
+  background-image: url(../img/arrow-right.svg);
+}
+
+.bikes-list {
+  padding-top: 120px;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }

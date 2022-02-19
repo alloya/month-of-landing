@@ -28,9 +28,10 @@
   <div class="content">
     <section class="intro">
       <div class="intro__wrapper">
-        <div class="intro__info">
+        <div class="section__info">
           <h1 class="section__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
-          <p class="intro__description">Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам
+          <p class="section__description">Триатлонные старты, горные серпантины или грейвел заезды по живописным
+            маршрутам
             –
             нужно только определиться с выбором велосипеда и отправиться в путь.</p>
           <button class="intro__button" type="button">Подробнее</button>
@@ -58,46 +59,48 @@
       </div>
     </section>
     <section class="carousel" id="covering">
-      <ol class="carousel__viewport">
-        <li class="carousel__item" id="highway">
-          <h1 class="section__title">Шоссе</h1>
-          <p class="carousel__description">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь
-            то
-            горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p>
-          <div class="carousel__imgs">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__terrain">
+      <div class="carousel__viewport">
+        <div class="carousel__item fade">
+          <div class="section__info">
+            <h1 class="section__title">Шоссе</h1>
+            <p class="section__description">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь
+              то
+              горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p>
           </div>
-          <a class="carousel__prev" href="#gravel"></a>
-          <a class="carousel__next" href="#tt"></a>
-        </li>
-        <li class="carousel__item" id="gravel">
-          <h1 class="section__title">Грэвел</h1>
-          <p class="carousel__description">Грэвел похож на шоссейный велосипед, но конструкция рамы немного отличается,
-            и
-            на нём стоят более широкие покрышки, всё для того чтобы проехать по лёгкому бездорожью.</p>
           <div class="carousel__imgs">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__terrain">
+            <img src="./img/highway.png" alt="" class="carousel__item-image">
+            <img src="./img/gravel.png" alt="" class="carousel__item-image">
+            <img src="./img/highway-terrain.svg" alt="" class="carousel__terrain">
           </div>
-          <a class="carousel__prev" href="#tt"></a>
-          <a class="carousel__next" href="#highway"></a>
-        </li>
-        <li class="carousel__item" id="tt">
-          <h1 class="section__title">ТТ</h1>
-          <p class="carousel__description">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком
-            велике только по равнинному асфальту, велик очень быстрые и аэродинамичный.</p>
+        </div>
+        <div class="carousel__item hidden fade">
+          <div class="section__info">
+            <h1 class="section__title">Грэвел</h1>
+            <p class="section__description">Грэвел похож на шоссейный велосипед, но конструкция рамы немного
+              отличается,
+              и на нём стоят более широкие покрышки, всё для того чтобы проехать по лёгкому бездорожью.</p>
+          </div>
           <div class="carousel__imgs">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__item-image">
-            <img src="" alt="" class="carousel__terrain">
+            <img src="./img/gravel.png" alt="" class="carousel__item-image">
+            <img src="./img/tt.png" alt="" class="carousel__item-image">
+            <img src="./img/gravel-terrain.svg" alt="" class="carousel__terrain">
           </div>
-          <a class="carousel__prev" href="#highway"></a>
-          <a class="carousel__next" href="#gravel"></a>
-        </li>
-      </ol>
+        </div>
+        <div class="carousel__item hidden fade">
+          <div class="section__info">
+            <h1 class="section__title">ТТ</h1>
+            <p class="section__description">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком
+              велике только по равнинному асфальту, велик очень быстрый и аэродинамичный.</p>
+          </div>
+          <div class="carousel__imgs">
+            <img src="./img/tt.png" alt="" class="carousel__item-image">
+            <img src="./img/highway.png" alt="" class="carousel__item-image">
+            <img src="./img/tt-terrain.svg" alt="" class="carousel__terrain">
+          </div>
+        </div>
+        <a class="arrow arrow_prev"></a>
+        <a class="arrow arrow_next"></a>
+      </div>
     </section>
     <section class="bikes-list" id="bikes">
       <div class="bikes-list__wrapper">
@@ -152,10 +155,13 @@
       </div>
     </section>
     <section class="trainings" id="trainings">
-      <h1 class="section__title">Тренировки</h1>
-      <p class="trainings__description">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
-        записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный план.
-      </p>
+      <div class="section__info">
+        <h1 class="section__title">Тренировки</h1>
+        <p class="section__description">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
+          записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный
+          план.
+        </p>
+      </div>
       <ul class="trainings__list">
         <li class="trainings__item">
           <a href="" class="trainings__link">Strava</a>
@@ -175,6 +181,7 @@
       <div class="theme-switcher"></div>
     </div>
   </footer>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>
