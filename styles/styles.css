@@ -1,0 +1,12 @@
+.btn {
+  font-weight: normal;
+  text-align: center;
+  border-radius: 2px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: "Rubik", sans-serif;
+}
+.btn:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */

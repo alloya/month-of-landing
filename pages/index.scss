@@ -1,0 +1,165 @@
+@import "../vendor/fonts.css";
+@import "../styles/variables.scss";
+@import "../styles/styles.scss";
+@import "../styles/mixins.scss";
+
+.body {
+  font-family: $font;
+  background-color: $base-color;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-left: 120px;
+  box-sizing: border-box;
+}
+
+.content {
+  display: grid;
+  row-gap: 120px;
+}
+
+.header {
+  padding: 28px 120px 28px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: $base-color;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include font-size(14, 18, 500);
+}
+
+.nav-item {
+  margin-left: 20px;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+
+.nav-link {
+  text-decoration: none;
+  color: $font-dark;
+  cursor: url(../img/cursor.svg), auto;
+}
+
+.section__title {
+  @include font-size(55, 60, 700);
+  letter-spacing: -0.5px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.intro__wrapper {
+  display: flex;
+}
+
+.intro__info {
+  width: 460px;
+}
+
+.intro__description {
+  @include font-size(18, 28);
+  margin-bottom: 50px;
+}
+
+.intro_img {
+  width: 610px;
+  height: 836px;
+}
+
+.intro__dash-wrapper {
+  display: flex;
+}
+
+.intro__bike-title {
+  margin: 0;
+}
+
+.intro__dash {
+  width: 132px;
+  margin: 9px;
+  border-bottom: 2px solid #D7D4D4;
+}
+
+.intro__button {
+  @include background-transition($secondary, #319E75);
+  @include font-size(18, 18);
+  padding: 16px 10px;
+  width: 180px;
+  text-align: center;
+  color: $font-light;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 167px;
+}
+
+.intro__images-block {
+  position: relative;
+}
+
+.intro__sticky-bike {
+  position: absolute;
+  margin-left: -200px;
+  height: 430px;
+  bottom: 79px;
+}
+
+.intro__sticky-img {
+  width: 340px;
+  object-fit: cover;
+  background-color: $base-color;
+  padding: 20px 50px;
+  border-radius: 20px;
+  position: sticky;
+  top: 0;
+  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+}
+
+.intermediate {
+  display: flex;
+  padding-right: 120px;
+}
+
+.intermediate__img {
+  width: 650px;
+  height: 480px;
+  object-fit: cover;
+}
+
+.intermediate__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 80px;
+}
+
+.intermediate__quote {
+  margin: 0;
+  @include font-size(34, 44, 600);
+  letter-spacing: -0.5px;
+}
+
+.intermediate__quote-author {
+  @include font-size(20, 32, 500);
+  margin: 0;
+}
+
+.intermediate__quote-prof {
+  @include font-size(16, 28);
+  margin: 0;
+  color: #222222;
+  opacity: 0.7;
+}

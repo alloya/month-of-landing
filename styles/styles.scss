@@ -1,0 +1,17 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+
+
+.btn {
+    font-weight: normal;
+    text-align: center;
+    border-radius: 2px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Rubik', sans-serif;
+    &:hover {
+        cursor: pointer;
+    }
+}
