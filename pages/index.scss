@@ -30,26 +30,29 @@
   padding-left: 120px;
 }
 
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+}
+
+.list-link {
+  text-decoration: none;
+  color: $font-dark;
+  @include cursor-pointer;
+}
+
+.nav-list {
+  justify-content: flex-end;
   @include font-size(14, 18, 500);
 }
 
 .nav-item {
-  margin-left: 20px;
+  margin-left: 34px;
   &:hover {
     opacity: 0.7;
   }
-}
-
-.nav-link {
-  text-decoration: none;
-  color: $font-dark;
-  @include cursor-pointer;
 }
 
 .section__title {
@@ -67,6 +70,7 @@
 
 .intro__wrapper {
   display: flex;
+  padding-top: 80px;
 }
 
 .section__info {
@@ -119,7 +123,7 @@
   position: absolute;
   margin-left: -200px;
   height: 430px;
-  bottom: 79px;
+  bottom: 37px;
 }
 
 .intro__sticky-img {
@@ -135,12 +139,12 @@
 
 .intermediate {
   display: flex;
-  padding-right: 120px;
+  padding: 120px 120px 40px 0;
 }
 
 .intermediate__img {
   width: 650px;
-  height: 480px;
+  height: 460px;
   object-fit: cover;
 }
 
@@ -171,6 +175,7 @@
 
 .carousel {
   padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .carousel__imgs {
@@ -218,24 +223,28 @@
 }
 
 .bikes-list {
-  padding-top: 80px;
-  padding-right: 120px;
+  padding: 75px 120px 60px 0;
+}
+
+.bike__item {
+  font-size: 0;
+}
+
+.bike__link {
+  text-decoration: none;
 }
 
 .bikes-list__wrapper {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 120px;
+  margin-bottom: 105px;
 }
 
 .bikes-list__filter {
-  list-style: none;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 40px;
-  padding: 0;
-  margin: 0;
-  align-items: center;
+  padding-top: 10px;
 }
 
 .bikes-list__item {
@@ -263,7 +272,7 @@
 
 .bikes-list__img {
   background-color: $base-color;
-  padding: 12px;
+  padding: 20px;
   border-radius: 20px;
   filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
   height: 380px;
@@ -279,6 +288,125 @@
   margin-top: 22px;
 }
 
+.trainings {
+  padding: 150px 120px 120px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trainings-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trainings__list {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  column-gap: 30px;
+}
+
+.trainings__item {
+  @include font-size(18, 28, 600);
+  cursor: url(../img/cursor.svg), auto;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.trainings__img {
+  width: 580px;
+  height: 460px;
+  object-fit: cover;
+}
+
+.footer {
+  padding: 80px 120px 60px;
+  background-color: $base-footer-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-input-container {
+  width: 360px;
+}
+
+.footer__subscribe-text {
+  @include font-size(24, 32, 600);
+  color: $font-dark;
+  width: 95%;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.footer__copyright {
+  margin: 0;
+  color: #CFCFCF;
+}
+
+.footer input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: url(../img/cursor.svg), auto;;
+  }
+  
+.slider {
+  display: flex;
+}
+
+.icon {
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon__sun {
+  background-image: url(../img/sun.svg);
+}
+
+.icon__moon {
+  background-image: url(../img/moon.svg);
+}
+
+.toggle {
+  height: 24px;
+  width: 44px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0 22px;
+  background: white;
+  transition: all .2s ease;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: $secondary;
+    box-shadow: 0 1px 2px rgba(44,44,44,.2);
+    transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+  }
+  &:checked {
+    border-color: #654FEC;
+    &:after {
+      transform: translatex(20px);
+    }
+  }
+}
 
 .fade {
   -webkit-animation-name: fade;
