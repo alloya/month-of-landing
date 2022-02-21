@@ -18,7 +18,6 @@
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  padding-left: 120px;
   box-sizing: border-box;
 }
 
@@ -29,6 +28,10 @@
   top: 0;
   z-index: 10;
   background-color: #F4F4F4;
+}
+
+.content {
+  padding-left: 120px;
 }
 
 .nav-list {
@@ -59,9 +62,10 @@
   font-size: 55px;
   line-height: 1.0909090909;
   font-weight: 700;
+  color: #151515;
   letter-spacing: -0.5px;
   margin-bottom: 50px;
-  margin-top: 0;
+  margin: 0;
 }
 
 .intro {
@@ -81,7 +85,7 @@
   font-size: 18px;
   line-height: 1.5555555556;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
 .intro_img {
@@ -147,7 +151,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 80px;
-  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
 }
 
 .intermediate {
@@ -193,12 +197,8 @@
   opacity: 0.7;
 }
 
-.hidden {
-  display: none;
-}
-
 .carousel {
-  padding-top: 120px;
+  padding-top: 80px;
 }
 
 .carousel__imgs {
@@ -251,7 +251,73 @@
 }
 
 .bikes-list {
-  padding-top: 120px;
+  padding-top: 80px;
+  padding-right: 120px;
+}
+
+.bikes-list__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+
+.bikes-list__filter {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, -webkit-min-content);
+  grid-template-columns: repeat(3, min-content);
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.bikes-list__item {
+  font-size: 18px;
+  line-height: 1.5555555556;
+  font-weight: 400;
+  cursor: url(../img/cursor.svg), auto;
+  text-align: right;
+  opacity: 0.7;
+}
+.bikes-list__item.selected {
+  font-weight: 600;
+  opacity: 1;
+}
+.bikes-list__item.selected:hover {
+  opacity: 0.75;
+}
+.bikes-list__item:hover {
+  opacity: 0.6;
+}
+
+.bikes-list__slide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+
+.bikes-list__img {
+  background-color: #F4F4F4;
+  padding: 12px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
+  height: 380px;
+  width: 380px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-sizing: border-box;
+  cursor: url(../img/cursor.svg), auto;
+}
+
+.bikes-list__model {
+  font-size: 18px;
+  line-height: 1.2222222222;
+  font-weight: 600;
+  color: #151515;
+  margin-top: 22px;
 }
 
 .fade {
@@ -259,6 +325,10 @@
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+.hidden {
+  display: none;
 }
 
 @-webkit-keyframes fade {
