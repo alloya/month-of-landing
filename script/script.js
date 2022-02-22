@@ -3,6 +3,7 @@ const nextArrow = document.querySelector(".arrow_next");
 const slides = document.querySelectorAll(".carousel__item");
 const bikefilters = document.querySelectorAll(".bikes-list__item");
 const bikeSlides = document.querySelectorAll(".bikes-list__slide");
+const themeSwitcher = document.querySelector(".toggle");
 
 let slideIndex = 1;
 
@@ -50,3 +51,28 @@ bikefilters.forEach(element => {
   });
 });
 
+// function to set a given theme/color-scheme
+function setTheme(themeName) {
+  localStorage.setItem('theme', themeName);
+  document.documentElement.className = themeName;
+}
+
+// function to toggle between light and dark theme
+function toggleTheme() {
+  if (localStorage.getItem('theme') === 'theme-dark'){
+    setTheme('theme-light');
+  } else {
+    setTheme('theme-dark');
+  }
+}
+
+// Immediately invoked function to set the theme on initial load
+(function () {
+  if (localStorage.getItem('theme') === 'theme-dark') {
+    setTheme('theme-dark');
+  } else {
+    setTheme('theme-light');
+  }
+})();
+
+themeSwitcher.addEventListener('click', toggleTheme);

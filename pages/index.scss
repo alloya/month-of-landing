@@ -7,6 +7,7 @@
   --color-primary: #F4F4F4;
   --color-secondary: #EFEFEF;
   --color-accent: #24B47E;
+  --color-picture-back: #F4F4F4;
   --font-color: #151515;
 }
 
@@ -14,6 +15,7 @@
   --color-primary: #333333;
   --color-secondary: #2F2F2F;
   --color-accent: #24B47E;
+  --color-picture-back: #F4F4F4;
   --font-color: #FFFFFF;
 }
 
@@ -23,7 +25,7 @@
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
-  
+  color: var(--font-color);
   box-sizing: border-box;
 }
 
@@ -37,7 +39,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  //background-color: $base-color;
+  background-color: var(--color-primary);
 }
 
 .content {
@@ -53,7 +55,7 @@
 
 .list-link {
   text-decoration: none;
-  color: $font-dark;
+  color: var(--font-color);
   @include cursor-pointer;
 }
 
@@ -71,7 +73,6 @@
 
 .section__title {
   @include font-size(55, 60, 700);
-  color: $font-dark;
   letter-spacing: -0.5px;
   margin-bottom: 50px;
   margin: 0;
@@ -94,6 +95,7 @@
 .section__description {
   @include font-size(18, 28);
   margin: 50px 0;
+  opacity: 0.7;
 }
 
 .intro_img {
@@ -116,13 +118,13 @@
 }
 
 .intro__button {
-  @include background-transition($secondary, #319E75);
+  @include background-transition(var(--color-accent), #319E75);
   @include font-size(18, 18);
   @include cursor-pointer;
   padding: 16px 10px;
   width: 180px;
   text-align: center;
-  color: $font-light;
+  color: white;
   border-radius: 4px;
   border: none;
   margin-bottom: 167px;
@@ -143,7 +145,7 @@
 .intro__sticky-img {
   width: 340px;
   object-fit: cover;
-  background-color: $base-color;
+  background-color: var(--color-picture-back);
   padding: 20px 50px;
   border-radius: 20px;
   position: sticky;
@@ -183,7 +185,6 @@
 .intermediate__quote-prof {
   @include font-size(16, 28);
   margin: 0;
-  color: #222222;
   opacity: 0.7;
 }
 
@@ -285,7 +286,7 @@
 }
 
 .bikes-list__img {
-  background-color: $base-color;
+  background-color: var(--color-picture-back);
   padding: 20px;
   border-radius: 20px;
   filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
@@ -298,8 +299,9 @@
 
 .bikes-list__model {
   @include font-size(18, 22, 600);
-  color: $font-dark;
+  color: var(--font-color);
   margin-top: 22px;
+  cursor: url(../img/cursor.svg), auto;
 }
 
 .trainings {
@@ -336,7 +338,7 @@
 
 .footer {
   padding: 80px 120px 60px;
-  background-color: $base-footer-light;
+  background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -348,7 +350,7 @@
 
 .footer__subscribe-text {
   @include font-size(24, 32, 600);
-  color: $font-dark;
+  color: var(--font-color);
   width: 95%;
   margin-bottom: 50px;
   margin-top: 0;
@@ -410,7 +412,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: $secondary;
+    background: var(--color-accent);
     box-shadow: 0 1px 2px rgba(44,44,44,.2);
     transition: all .2s cubic-bezier(.5,.1,.75,1.35);
   }

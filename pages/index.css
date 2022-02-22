@@ -12,12 +12,29 @@
   cursor: pointer;
 }
 
+.theme-light {
+  --color-primary: #F4F4F4;
+  --color-secondary: #EFEFEF;
+  --color-accent: #24B47E;
+  --color-picture-back: #F4F4F4;
+  --font-color: #151515;
+}
+
+.theme-dark {
+  --color-primary: #333333;
+  --color-secondary: #2F2F2F;
+  --color-accent: #24B47E;
+  --color-picture-back: #F4F4F4;
+  --font-color: #FFFFFF;
+}
+
 .body {
   font-family: Inter, Arial, sans-serif;
-  background-color: #F4F4F4;
+  background-color: var(--color-primary);
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
+  color: var(--font-color);
   box-sizing: border-box;
 }
 
@@ -27,7 +44,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: #F4F4F4;
+  background-color: var(--color-primary);
 }
 
 .content {
@@ -43,7 +60,7 @@
 
 .list-link {
   text-decoration: none;
-  color: #151515;
+  color: var(--font-color);
   cursor: url(../img/cursor.svg), auto;
 }
 
@@ -65,7 +82,6 @@
   font-size: 55px;
   line-height: 1.0909090909;
   font-weight: 700;
-  color: #151515;
   letter-spacing: -0.5px;
   margin-bottom: 50px;
   margin: 0;
@@ -90,6 +106,7 @@
   line-height: 1.5555555556;
   font-weight: 400;
   margin: 50px 0;
+  opacity: 0.7;
 }
 
 .intro_img {
@@ -112,7 +129,7 @@
 }
 
 .intro__button {
-  background: linear-gradient(90deg, #319E75 0%, #319E75 50%, #24B47E 50%, #24B47E 100%);
+  background: linear-gradient(90deg, #319E75 0%, #319E75 50%, var(--color-accent) 50%, var(--color-accent) 100%);
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position: right bottom;
@@ -124,7 +141,7 @@
   padding: 16px 10px;
   width: 180px;
   text-align: center;
-  color: #FFFFFF;
+  color: white;
   border-radius: 4px;
   border: none;
   margin-bottom: 167px;
@@ -149,7 +166,7 @@
   width: 340px;
   -o-object-fit: cover;
      object-fit: cover;
-  background-color: #F4F4F4;
+  background-color: var(--color-picture-back);
   padding: 20px 50px;
   border-radius: 20px;
   position: -webkit-sticky;
@@ -197,7 +214,6 @@
   line-height: 1.75;
   font-weight: 400;
   margin: 0;
-  color: #222222;
   opacity: 0.7;
 }
 
@@ -309,7 +325,7 @@
 }
 
 .bikes-list__img {
-  background-color: #F4F4F4;
+  background-color: var(--color-picture-back);
   padding: 20px;
   border-radius: 20px;
   filter: drop-shadow(0px 20px 140px rgba(0, 0, 0, 0.06));
@@ -325,8 +341,9 @@
   font-size: 18px;
   line-height: 1.2222222222;
   font-weight: 600;
-  color: #151515;
+  color: var(--font-color);
   margin-top: 22px;
+  cursor: url(../img/cursor.svg), auto;
 }
 
 .trainings {
@@ -368,7 +385,7 @@
 
 .footer {
   padding: 80px 120px 60px;
-  background-color: #EFEFEF;
+  background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -382,7 +399,7 @@
   font-size: 24px;
   line-height: 1.3333333333;
   font-weight: 600;
-  color: #151515;
+  color: var(--font-color);
   width: 95%;
   margin-bottom: 50px;
   margin-top: 0;
@@ -445,7 +462,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #24B47E;
+  background: var(--color-accent);
   box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
   transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
 }
