@@ -3,9 +3,23 @@
 @import "../styles/styles.scss";
 @import "../styles/mixins.scss";
 
+.theme-light {
+  --color-primary: #F4F4F4;
+  --color-secondary: #EFEFEF;
+  --color-accent: #24B47E;
+  --font-color: #151515;
+}
+
+.theme-dark {
+  --color-primary: #333333;
+  --color-secondary: #2F2F2F;
+  --color-accent: #24B47E;
+  --font-color: #FFFFFF;
+}
+
 .body {
   font-family: $font;
-  background-color: $base-color;
+  background-color: var(--color-primary);
   max-width: 1440px;
   min-width: 320px;
   margin: 0 auto;
@@ -23,7 +37,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: $base-color;
+  //background-color: $base-color;
 }
 
 .content {
