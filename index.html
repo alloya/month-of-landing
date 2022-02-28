@@ -12,6 +12,8 @@
 <body class="body">
   <header class="header">
     <nav class="nav-menu">
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="list nav-list">
         <li class="nav-item">
           <a href="#covering" class="list-link">Покрытия и градиенты</a>
@@ -26,10 +28,10 @@
     </nav>
   </header>
   <div class="content">
-    <section class="intro">
-      <div class="intro__wrapper">
+    <section class="section section__intro">
+      <h1 class="section__title section__title_intro">Шоссе, ТТ и&nbsp;Грэвел</h1>
+      <div class="section__wrapper">
         <div class="section__info">
-          <h1 class="section__title">Шоссе, ТТ и&nbsp;Грэвел</h1>
           <p class="section__description">Триатлонные старты, горные серпантины или грейвел заезды по живописным
             маршрутам
             –
@@ -63,13 +65,14 @@
         <div class="carousel__item fade">
           <div class="section__info">
             <h1 class="section__title">Шоссе</h1>
-            <p class="section__description carousel__description">На шоссейном велосипеде можно ездить по асфальту на разных градиентах: будь
+            <p class="section__description carousel__description">На шоссейном велосипеде можно ездить по асфальту на
+              разных градиентах: будь
               то
               горы или равнины. Гонки проходят в командном пелотоне, но тренироваться можно и самостоятельно.</p>
           </div>
           <div class="carousel__imgs">
             <img src="./img/highway.png" alt="" class="carousel__item-image">
-            <img src="./img/gravel.png" alt="" class="carousel__item-image">
+            <img src="./img/gravel.png" alt="" class="carousel__item-image d-sm-none">
             <img src="./img/highway-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
@@ -82,7 +85,7 @@
           </div>
           <div class="carousel__imgs">
             <img src="./img/gravel.png" alt="" class="carousel__item-image">
-            <img src="./img/tt.png" alt="" class="carousel__item-image">
+            <img src="./img/tt.png" alt="" class="carousel__item-image d-sm-none">
             <img src="./img/gravel-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
@@ -94,7 +97,7 @@
           </div>
           <div class="carousel__imgs">
             <img src="./img/tt.png" alt="" class="carousel__item-image">
-            <img src="./img/highway.png" alt="" class="carousel__item-image">
+            <img src="./img/highway.png" alt="" class="carousel__item-image d-sm-none">
             <img src="./img/tt-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
@@ -104,7 +107,7 @@
     </section>
     <section class="bikes-list" id="bikes">
       <div class="bikes-list__wrapper">
-        <h1 class="section__title">Велосипеды</h1>
+        <h1 class="section__title section__title_bikes-list">Велосипеды</h1>
         <ul class="bikes-list__filter">
           <li class="list bikes-list__item selected" id="highway">Шоссе</li>
           <li class="list bikes-list__item" id="gravel">Грэвел</li>
@@ -189,9 +192,9 @@
         </div>
       </div>
     </section>
-    <section class="trainings" id="trainings">
+    <section class="section trainings" id="trainings">
       <h1 class="section__title">Тренировки</h1>
-      <div class="trainings-wrapper">
+      <div class="section__wrapper section__wrapper_trainings">
         <div class="section__info">
           <p class="section__description">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
             записать эти тренировки поможет приложение Strava, а также это приложение позволит построить тренировочный

@@ -1,41 +1,27 @@
 @import "../styles/variables.scss";
 
 
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
 
-$breakpoint-small: 600px;
-$breakpoint-med-small: 960px;
-$breakpoint-med: 1175px;
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
 
-// @mixin screen($size, $type: max, $pixels: $breakpoint-small) {
-//   @if $size == 'small' {
-//     @media screen and ($type + -width: $breakpoint-small) {
-//         @content;
-//     }
-//   }
-//   @else if $size == 'med-small' {
-//     @media screen and ($type + -width: $breakpoint-med-small) {
-//         @content;
-//     }
-//   }
-//   @else if $size == 'med' {
-//     @media screen and ($type + -width: $breakpoint-med) {
-//         @content;
-//     }
-//   }
-//   @else if $size == 'large' {
-//     @media screen and ($type + -width: $breakpoint-med) {
-//         @content;
-//     }
-//   }
-//   @else if $size == 'custom' {
-//     @media screen and ($type + -width: $pixels + px) {
-//       @content;
-//     }
-//   }
-//   @else {
-//     @content;
-//   }
-// }
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
 
 @mixin font-size($font-size, $line-height: normal, $font-weight: 400) {
   font-size: $font-size * 1px;

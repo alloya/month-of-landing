@@ -40,12 +40,15 @@
   top: 0;
   z-index: 10;
   background-color: var(--color-primary);
+  @include mobile {
+    padding: 0;
+  }
 }
 
 .content {
   padding-left: 120px;
-  @media screen and (max-width: 400px) {
-    padding-left: 30px;
+  @include mobile {
+    padding: 0 18px;
   }
 }
 
@@ -54,6 +57,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  overflow: hidden;
 }
 
 .list-link {
@@ -65,6 +69,88 @@
 .nav-list {
   justify-content: flex-end;
   @include font-size(14, 18, 500);
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.navicon:before,
+.navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }
 
 .nav-item {
@@ -74,45 +160,80 @@
   }
 }
 
+.section {
+  display: grid;
+  grid-template-columns: 460px 610px;
+  column-gap: 250px;
+  grid-template-areas: 
+    'title picture';
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'title'
+    'picture'
+    'info';
+  }
+}
+
 .section__title {
   @include font-size(55, 60, 700);
   letter-spacing: -0.5px;
   margin-bottom: 50px;
   margin: 0;
-  @media (max-width:400px) {
-    order: 0;
+  grid-area: title;
+  @include mobile {
+    @include font-size(32, 40, 700);
+
   }
+}
+
+.section__title_intro {
+  padding-top: 80px;
 }
 
 .intro {
   display: flex;
   justify-content: space-between;
-  @media (max-width:400px) {
-    flex-direction: column;
+  @include mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'title'
+    'picture'
+    'info';
   }
 }
 
-.intro__wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px;
-  @media (max-width:400px) {
-    order: 2;
+.section__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-top: 250px;
+  grid-area: title; 
+  @include mobile {
+    grid-area: info;
+    padding-top: 40px;
   }
 }
 
 .section__info {
   width: 100%;
   max-width: 460px;
+  @include mobile {
+  }
 }
 
 .section__description {
   @include font-size(18, 28);
-  margin: 50px 0;
   opacity: 0.7;
-  @media (max-width:400px) {
-    order: 2;
+  margin: 0;
+  @include mobile {
+    @include font-size(12, 18);
   }
+}
+
+.section__intro {
+  padding-bottom: 80px;
 }
 
 .intro__img {
@@ -120,20 +241,22 @@
   height: 100%;
   max-width: 610px;
   max-height: 836px;
-  @media (max-width:400px) {
+  @include mobile {
     padding-left: 30px;
+    box-sizing: border-box;
   }
 }
 
 .intro__dash-wrapper {
   display: flex;
-  @media (max-width:400px) {
+  @include mobile {
     display: none;
   }
 }
 
 .intro__bike-title {
   margin: 0;
+  @include font-size(18, 18);
 }
 
 .intro__dash {
@@ -152,14 +275,23 @@
   color: white;
   border-radius: 4px;
   border: none;
+  margin-top: 50px;
   margin-bottom: 167px;
+  @include mobile {
+    margin-top: 40px;
+    margin-bottom: 0;
+    width: 100%;
+    @include font-size(13, 19);
+    padding: 13px 10px;
+  }
 }
 
 .intro__images-block {
   position: relative;
   padding-top: 20px;
-  @media (max-width:400px) {
-    order: 1;
+  grid-area: picture;
+  @include mobile {
+    padding-top: 40px;
   }
 }
 
@@ -168,9 +300,9 @@
   margin-left: -200px;
   height: 430px;
   bottom: 37px;
-  @media (max-width:400px) {
+  @include mobile {
     margin-left: 0;
-    height: 200px;
+    height: 160px;
   }
 }
 
@@ -183,9 +315,9 @@
   position: sticky;
   top: 80px;
   filter: drop-shadow(-20px 60px 220px rgba(0, 0, 0, 0.2));
-  @media (max-width:400px) {
+  @include mobile {
     max-width: 70%;
-    padding: 0;
+    padding: 0 20px;
   }
 }
 
@@ -193,9 +325,10 @@
   display: flex;
   padding: 120px 120px 40px 0;
 
-  @media screen and (max-width: 400px) {
+  @include mobile {
     flex-direction: column;
-    padding: 60px 60px 20px 0;
+    padding: 20px 0 80px 0;
+    border-top: 1px solid #E3E3E3;
   }
 }
 
@@ -212,9 +345,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding-left: 80px;
-  @media (max-width: 400px) {
+  @include mobile {
     padding-left: 0;
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 
@@ -222,34 +355,45 @@
   margin: 0;
   @include font-size(34, 44, 600);
   letter-spacing: -0.5px;
+  @include mobile {
+    @include font-size(23, 29, 600);
+  }
 }
 
 .intermediate__quote-wrapper {
-  @media (max-width:400px) {
-    padding-top: 50px;
+  @include mobile {
+    padding-top: 40px;
   }
 }
 
 .intermediate__quote-author {
   @include font-size(20, 32, 500);
   margin: 0;
+  @include mobile {
+    @include font-size(14, 22, 500);
+  }
 }
 
 .intermediate__quote-prof {
   @include font-size(16, 28);
   margin: 0;
   opacity: 0.7;
+  @include mobile {
+    @include font-size(10, 16, 500);
+  }
 }
 
 .carousel {
-  padding-top: 80px;
   padding-bottom: 40px;
+  padding-top: 80px;
+  @include mobile {
+    padding-top: 40px;
+    border-top: 1px solid #E3E3E3;
+  }
 }
 
 .carousel__description {
-  @media (max-width:400px) {
-    order: 2;
-  }
+  margin-top: 50px;
 }
 
 .carousel__imgs {
@@ -262,7 +406,7 @@
   width: 100%;
   max-width: 1320px;
   overflow: hidden;
-  @media (max-width:400px) {
+  @include mobile {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     order: 1;
@@ -305,7 +449,15 @@
 }
 
 .bikes-list {
-  padding: 75px 120px 60px 0;
+  padding: 0 120px 60px 0;
+  margin-bottom: 80px;
+  @include mobile {
+    padding: 40px 0 0 0;
+  }
+}
+
+.section__title_bikes-list {
+  padding-top: 80px;
 }
 
 .bike__item {
@@ -320,7 +472,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 105px;
-  @media (max-width:400px) {
+  @include mobile {
     flex-direction: column;
   }
 }
@@ -329,7 +481,7 @@
   display: grid;
   grid-template-columns: repeat(3, min-content);
   column-gap: 40px;
-  padding-top: 10px;
+  padding-top: 85px;
 }
 
 .bikes-list__item {
@@ -353,7 +505,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 30px;
-  @media (max-width:400px) {
+  @include mobile {
     grid-template-columns: 1fr;
   }
 }
@@ -380,24 +532,20 @@
 }
 
 .trainings {
-  padding: 150px 120px 120px 0;
-  display: flex;
-  justify-content: space-between;
-  @media (max-width:400px) {
-    flex-direction: column;
+  padding: 80px 120px 110px 0;
+  column-gap: 160px;
+  @include mobile {
+    padding: 40px 0 0 0;
+    border-top: 1px solid #E3E3E3;
   }
 }
 
-.trainings-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media (max-width:400px) {
-    order: 2;
-  }
+.section__wrapper_trainings {
+  padding-top: 100px;
 }
 
 .trainings__list {
+  margin-top: auto;
   display: grid;
   grid-template-columns: repeat(2, min-content);
   column-gap: 30px;
@@ -417,7 +565,7 @@
   max-width: 580px;
   max-height: 460px;
   object-fit: cover;
-  @media (max-width:400px) {
+  @include mobile {
     order: 1;
   }
 }
@@ -428,15 +576,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width:400px) {
+  @include mobile {
     padding: 20px 30px 15px;
   }
 }
 
 .footer-input-container {
   width: 360px;
-  @media (max-width:400px) {
-    width: 280p;
+  @include mobile {
+    width: 280px;
   }
 }
 
@@ -526,6 +674,10 @@
 
 
 .hidden {
+  display: none;
+}
+
+.d-sm-none {
   display: none;
 }
 
