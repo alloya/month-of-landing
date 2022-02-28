@@ -62,9 +62,13 @@
     </section>
     <section class="carousel" id="covering">
       <div class="carousel__viewport">
+        <div class="arrow-wrapper">
+          <a class="arrow arrow_prev d-md-none"></a>
+          <a class="arrow arrow_next d-md-none"></a>
+        </div>
         <div class="carousel__item fade">
-          <div class="section__info">
-            <h1 class="section__title">Шоссе</h1>
+          <h1 class="section__title">Шоссе</h1>
+          <div class="section__info section__info_carousel">
             <p class="section__description carousel__description">На шоссейном велосипеде можно ездить по асфальту на
               разных градиентах: будь
               то
@@ -77,8 +81,8 @@
           </div>
         </div>
         <div class="carousel__item hidden fade">
-          <div class="section__info">
-            <h1 class="section__title">Грэвел</h1>
+          <h1 class="section__title">Грэвел</h1>
+          <div class="section__info section__info_carousel">
             <p class="section__description">Грэвел похож на шоссейный велосипед, но конструкция рамы немного
               отличается,
               и на нём стоят более широкие покрышки, всё для того чтобы проехать по лёгкому бездорожью.</p>
@@ -90,8 +94,8 @@
           </div>
         </div>
         <div class="carousel__item hidden fade">
-          <div class="section__info">
-            <h1 class="section__title">ТТ</h1>
+          <h1 class="section__title">ТТ</h1>
+          <div class="section__info section__info_carousel">
             <p class="section__description">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком
               велике только по равнинному асфальту, велик очень быстрый и аэродинамичный.</p>
           </div>
@@ -101,13 +105,18 @@
             <img src="./img/tt-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
-        <a class="arrow arrow_prev"></a>
-        <a class="arrow arrow_next"></a>
+        <a class="arrow arrow_prev d-sm-none"></a>
+        <a class="arrow arrow_next d-sm-none"></a>
       </div>
     </section>
     <section class="bikes-list" id="bikes">
       <div class="bikes-list__wrapper">
         <h1 class="section__title section__title_bikes-list">Велосипеды</h1>
+        <select id="bikes" class="bikes-options d-sm-block">
+          <option class="bikes-option" value="highway">Шоссе</option>
+          <option class="bikes-option" value="gravel">Грэвел</option>
+          <option class="bikes-option" value="tt">TT</option>
+        </select>
         <ul class="bikes-list__filter">
           <li class="list bikes-list__item selected" id="highway">Шоссе</li>
           <li class="list bikes-list__item" id="gravel">Грэвел</li>
@@ -115,7 +124,7 @@
         </ul>
       </div>
       <div class="bikes-list__slide highway fade">
-        <div class="bike__item">
+        <div class="bike__item" id="#highway-1">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN"
             target="_blank">
@@ -123,7 +132,7 @@
             <figcaption class="bikes-list__model">Cervelo Caledonia-5</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none" id="#highway-2">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J"
             target="_blank">
@@ -131,7 +140,7 @@
             <figcaption class="bikes-list__model">Cannondale Systemsix Himod</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none" id="#highway-3">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF"
             target="_blank">
@@ -139,6 +148,12 @@
             <figcaption class="bikes-list__model">Trek Domane SL-7</figcaption>
           </a>
         </div>
+        <div class="dot-wrapper">
+          <a class="bikes-slider-dot" href="#highway-1"></a>
+          <a class="bikes-slider-dot" href="#highway-2"></a>
+          <a class="bikes-slider-dot" href="#highway-3"></a>
+        </div>
+
       </div>
       <div class="bikes-list__slide hidden gravel fade">
         <div class="bike__item">
@@ -149,14 +164,14 @@
             <figcaption class="bikes-list__model">Cervelo Aspero GRX 810</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9" target="_blank">
             <img src="./img/specialized-s.png" alt="Specialized S-Works Diverge" class="bikes-list__img">
             <figcaption class="bikes-list__model">Specialized S-Works Diverge</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8"
             target="_blank">
@@ -174,7 +189,7 @@
             <figcaption class="bikes-list__model">Specialized S-Works Shiv</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835"
             target="_blank">
@@ -182,7 +197,7 @@
             <figcaption class="bikes-list__model">BMC Timemachine 01 ONE</figcaption>
           </a>
         </div>
-        <div class="bike__item">
+        <div class="bike__item d-sm-none">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q"
             target="_blank">
@@ -191,6 +206,7 @@
           </a>
         </div>
       </div>
+
     </section>
     <section class="section trainings" id="trainings">
       <h1 class="section__title">Тренировки</h1>
@@ -216,11 +232,15 @@
   <footer class="footer">
     <div class="footer-input-container">
       <h2 class="footer__subscribe-text">Подпишитесь на рассылку&nbsp;—</h2>
-      <input type="email" name="email" id="email" placeholder="Ваш e-mail">
+      <form action="#" class="footer__form">
+        <label for="email" class="footer__label"></label>
+        <input type="email" class="footer__email" id="email" name="email" placeholder="Ваш e-mail">
+        <input type="submit" class="footer__button d-sm-none" value="ok">
+      </form>
     </div>
     <div class="footer__wrapper">
       <p class="footer__copyright">© Road Club 2021</p>
-      <div class="slider">
+      <div class="slider d-sm-none">
         <span class="icon icon__sun"></span>
         <input type="checkbox" class="toggle" unchecked>
         <span class="icon icon__moon"></span>
