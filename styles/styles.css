@@ -1,12 +1,21 @@
-.btn {
-  font-weight: normal;
-  text-align: center;
-  border-radius: 2px;
-  height: 40px;
-  font-size: 16px;
-  line-height: 26px;
-  font-family: "Rubik", sans-serif;
+.d-sm-none {
+  display: inline-block;
 }
-.btn:hover {
-  cursor: pointer;
+@media (min-width: 320px) and (max-width: 768px) {
+  .d-sm-none {
+    display: none;
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-sm-block {
+  display: none;
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  .d-sm-block {
+    display: block;
+  }
 }/*# sourceMappingURL=styles.css.map */

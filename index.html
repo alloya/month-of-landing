@@ -11,7 +11,7 @@
 
 <body class="body">
   <header class="header">
-    <input class="menu-btn hidden" type="checkbox" id="menu-btn" />
+    <input class="menu-btn d-none" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="nav-list">
       <li class="nav-item"><a href="#covering" class="list-link nav-link">Покрытия и градиенты</a></li>
@@ -23,7 +23,6 @@
         <span class="icon icon__moon"></span>
       </div>
     </ul>
-
   </header>
   <div class="content">
     <section class="section section__intro">
@@ -78,7 +77,7 @@
             <img src="./img/highway-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
-        <div class="carousel__item hidden fade">
+        <div class="carousel__item d-none fade">
           <h1 class="section__title">Грэвел</h1>
           <div class="section__info section__info_carousel">
             <p class="section__description">Грэвел похож на шоссейный велосипед, но конструкция рамы немного
@@ -91,7 +90,7 @@
             <img src="./img/gravel-terrain.svg" alt="" class="carousel__terrain">
           </div>
         </div>
-        <div class="carousel__item hidden fade">
+        <div class="carousel__item d-none fade">
           <h1 class="section__title">ТТ</h1>
           <div class="section__info section__info_carousel">
             <p class="section__description">ТТ — это велосипед для триатлона или раздельного старта, гооняют на таком
@@ -147,7 +146,7 @@
           </a>
         </div>
       </div>
-      <div class="bikes-list__slide hidden gravel fade">
+      <div class="bikes-list__slide d-none gravel fade">
         <div class="bike__item">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE"
@@ -172,7 +171,7 @@
           </a>
         </div>
       </div>
-      <div class="bikes-list__slide hidden tt fade">
+      <div class="bikes-list__slide d-none tt fade">
         <div class="bike__item">
           <a class="bike__link"
             href="https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9"
@@ -198,7 +197,7 @@
           </a>
         </div>
       </div>
-      <div class="dot-wrapper">
+      <div class="bikes-list_dot-wrapper">
         <a class="bikes-slider-dot" data-id="0" href="#1"></a>
         <a class="bikes-slider-dot" data-id="1" href="#2"></a>
         <a class="bikes-slider-dot" data-id="2" href="#3"></a>
@@ -241,9 +240,10 @@
         <input type="checkbox" class="toggle" unchecked>
         <span class="icon icon__moon"></span>
       </div>
-
+      <span class="footer__logo d-sm-block"></span>
     </div>
   </footer>
+  <script src="./script/const.js"></script>
   <script src="./script/script.js"></script>
 </body>
 

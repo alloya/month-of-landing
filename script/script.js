@@ -1,17 +1,3 @@
-const prevArrow = document.querySelector(".arrow_prev.d-sm-none");
-const nextArrow = document.querySelector(".arrow_next.d-sm-none");
-const slides = document.querySelectorAll(".carousel__item");
-const bikefilters = document.querySelectorAll(".bikes-list__item");
-const bikeSlides = document.querySelectorAll(".bikes-list__slide");
-const themeSwitcher = document.querySelector(".toggle");
-const menuLinks = document.querySelectorAll('.nav-item');
-const menuInput = document.querySelector('#menu-btn');
-const bikesOptions = document.querySelectorAll('.bikes-option');
-const selectBikeOptions = document.querySelector('.bikes-options');
-const prevArrowMobile = document.querySelector('.arrow_prev.d-md-none');
-const nextArrowMobile = document.querySelector('.arrow_next.d-md-none');
-const bikeDots = document.querySelectorAll('.bikes-slider-dot');
-
 let slideIndex = 1;
 let bikeSlideIndex = 1;
 
@@ -24,7 +10,7 @@ function showSlide(index) {
   else {
     slideIndex = index;
   }
-  slides[slideIndex-1].classList.remove('hidden');
+  slides[slideIndex-1].classList.remove('d-none');
 }
 
 function showBikesSlide(index, nodes) {
@@ -44,34 +30,34 @@ function setFilterState(element, options=false) {
 function filterBikes(id) {
   bikeSlides.forEach(elem => {
     if (elem.classList.contains(id)) {
-      elem.classList.remove('hidden');
+      elem.classList.remove('d-none');
     } else {
-      elem.classList.add('hidden');
+      elem.classList.add('d-none');
     }
   })
 }
 
 function getCurrentTerrainSlides() {
-  const terrain = document.querySelector('.bikes-list__slide:not(.hidden)');
+  const terrain = document.querySelector('.bikes-list__slide:not(.d-none)');
   return terrain.querySelectorAll('.bike__item');
 }
 
 showSlide(slideIndex);
 prevArrow.addEventListener('click', () => {
-  slides[slideIndex-1].classList.add('hidden');
+  slides[slideIndex-1].classList.add('d-none');
   showSlide(slideIndex - 1);
 });
 nextArrow.addEventListener('click', () => {
-  slides[slideIndex-1].classList.add('hidden');
+  slides[slideIndex-1].classList.add('d-none');
   showSlide(slideIndex + 1);
 });
 
 prevArrowMobile.addEventListener('click', () => {
-  slides[slideIndex-1].classList.add('hidden');
+  slides[slideIndex-1].classList.add('d-none');
   showSlide(slideIndex - 1);
 });
 nextArrowMobile.addEventListener('click', () => {
-  slides[slideIndex-1].classList.add('hidden');
+  slides[slideIndex-1].classList.add('d-none');
   showSlide(slideIndex + 1);
 });
 
@@ -109,6 +95,7 @@ function toggleTheme() {
 })();
 
 themeSwitcher.addEventListener('click', toggleTheme);
+themeSwitcherMobile.addEventListener('click', toggleTheme);
 
 menuLinks.forEach(element => {
   element.addEventListener('click', () => {
