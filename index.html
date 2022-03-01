@@ -17,7 +17,13 @@
       <li class="nav-item"><a href="#covering" class="list-link nav-link">Покрытия и градиенты</a></li>
       <li class="nav-item"><a href="#bikes" class="list-link nav-link">Велосипеды</a></li>
       <li class="nav-item"><a href="#trainings" class="list-link nav-link">Тренировки</a></li>
+      <div class="slider slider_header d-sm-block">
+        <span class="icon icon__sun"></span>
+        <input type="checkbox" class="toggle" unchecked>
+        <span class="icon icon__moon"></span>
+      </div>
     </ul>
+
   </header>
   <div class="content">
     <section class="section section__intro">
@@ -54,7 +60,7 @@
     </section>
     <section class="carousel" id="covering">
       <div class="carousel__viewport">
-        <div class="arrow-wrapper">
+        <div class="arrow-wrapper d-sm-block">
           <a class="arrow arrow_prev d-md-none"></a>
           <a class="arrow arrow_next d-md-none"></a>
         </div>
@@ -105,9 +111,9 @@
       <div class="bikes-list__wrapper">
         <h1 class="section__title section__title_bikes-list">Велосипеды</h1>
         <select id="bikes" class="bikes-options d-sm-block">
-          <option class="bikes-option" value="highway">Шоссе</option>
-          <option class="bikes-option" value="gravel">Грэвел</option>
-          <option class="bikes-option" value="tt">TT</option>
+          <option class="bikes-option highway" value="highway">Шоссе</option>
+          <option class="bikes-option gravel" value="gravel">Грэвел</option>
+          <option class="bikes-option tt" value="tt">TT</option>
         </select>
         <ul class="bikes-list__filter">
           <li class="list bikes-list__item selected" id="highway">Шоссе</li>
@@ -140,12 +146,6 @@
             <figcaption class="bikes-list__model">Trek Domane SL-7</figcaption>
           </a>
         </div>
-        <div class="dot-wrapper">
-          <a class="bikes-slider-dot" href="#highway-1"></a>
-          <a class="bikes-slider-dot" href="#highway-2"></a>
-          <a class="bikes-slider-dot" href="#highway-3"></a>
-        </div>
-
       </div>
       <div class="bikes-list__slide hidden gravel fade">
         <div class="bike__item">
@@ -198,10 +198,14 @@
           </a>
         </div>
       </div>
-
+      <div class="dot-wrapper">
+        <a class="bikes-slider-dot" data-id="0" href="#1"></a>
+        <a class="bikes-slider-dot" data-id="1" href="#2"></a>
+        <a class="bikes-slider-dot" data-id="2" href="#3"></a>
+      </div>
     </section>
     <section class="section trainings" id="trainings">
-      <h1 class="section__title">Тренировки</h1>
+      <h1 class="section__title section__title_trainings">Тренировки</h1>
       <div class="section__wrapper section__wrapper_trainings">
         <div class="section__info">
           <p class="section__description">Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а
@@ -227,7 +231,7 @@
       <form action="#" class="footer__form">
         <label for="email" class="footer__label"></label>
         <input type="email" class="footer__email" id="email" name="email" placeholder="Ваш e-mail">
-        <input type="submit" class="footer__button d-sm-none" value="ok">
+        <input type="submit" class="footer__button d-none" value="ok">
       </form>
     </div>
     <div class="footer__wrapper">
